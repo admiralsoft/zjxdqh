@@ -1,0 +1,15 @@
+/target/
+*.iml
+*/.idea/
+*/target
+/.idea/
+.svn/
+/.svn/
+.classpath
+.settings
+.project
+# Package Files #
+#*.jar
+*.war
+*.ear
+*.class
