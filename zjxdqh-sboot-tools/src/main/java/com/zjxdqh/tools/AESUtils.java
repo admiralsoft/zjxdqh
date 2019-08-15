@@ -97,15 +97,16 @@ public class AESUtils {
         return params;
     }
     public static void main(String[] args) throws UnsupportedEncodingException {
-        String s = "{\"total\":1,\"stationStatusInfo\":{\"operationID\":\"123456789\",\"stationID\":\"111111111111111\",\"connectorStatusInfos\":{\"connectorID\":1,\"equipmentID\":\"10000000000000000000001\",\"status\":4,\"currentA\":0,\"currentB\":0,\"currentC\":0,\"voltageA\":0,\"voltageB\":0,\"voltageC\":0,\"soc\":10,}}}";
+        String s = "{\"operationID\":\"765367611\",\"operatorSecret\":\"4hrC6kkEOhJYQuNl\"}";
 
         System.out.println("s:" + s);
 
-        byte[] s1 = AESUtils.encrypt(s.getBytes(), "1234567890abcdef".getBytes(), "1234567890abcdef".getBytes());
+        byte[] s1 = AESUtils.encrypt(s.getBytes(), "AveZrSgwSN1eSlxE".getBytes(), "siaxPfKkgAocqQ10".getBytes());
         String s3 = Base64.getEncoder().encodeToString(s1);
         System.out.println("s1:" + s3);
 
-        byte[] s2 = AESUtils.decrypt(Base64.getDecoder().decode(s3), "1234567890abcdef".getBytes(), "1234567890abcdef".getBytes());
+        s3 = "WUQ1vKm87JtyAqbrfNr+bAml/JtOi/mmU9zSwkZRgHuW0Y/ZJNIs9Uze2DyaZFmdNFoIp6QE4t2IgJ/ysjKt5w==";
+        byte[] s2 = AESUtils.decrypt(Base64.getDecoder().decode(s3), "AveZrSgwSN1eSlxE".getBytes(), "siaxPfKkgAocqQ10".getBytes());
         System.out.println("s2:"+new String(s2, "utf-8"));
     }
 
