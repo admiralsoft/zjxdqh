@@ -9,6 +9,12 @@ import java.util.concurrent.TimeUnit;
 @Service
 public class DistributeRedisLock implements DistributeLock {
 
+
+    @Override
+    public boolean tryLock(String key) {
+        return tryLock(key, DistributeLock.DEFAULT_LOCK_TIME);
+    }
+
     @Override
     public boolean tryLock(String key, int seconds) {
         long _startTime = System.currentTimeMillis();
@@ -42,6 +48,9 @@ public class DistributeRedisLock implements DistributeLock {
         return PREFIXLOCK + key;
     }
 
+    public boolean trySemaphoreLock(String key) {
+        return trySemaphoreLock(key, DistributeLock.DEFAULT_LOCK_TIME);
+    }
     @Override
     public boolean trySemaphoreLock(String key, int seconds) {
         if (RedisTools.setIfAbent(generateKey(key), 1, seconds)) {

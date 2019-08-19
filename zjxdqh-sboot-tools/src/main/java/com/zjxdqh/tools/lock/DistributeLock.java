@@ -20,6 +20,13 @@ public interface DistributeLock {
     public final static long TIMEOUT = 10;
 
     /**
+     * 分布式竞争锁(分布式锁请求等待), 默认等待5分钟
+     *
+     * @param key
+     * @return
+     */
+    public boolean tryLock(String key);
+    /**
      * 分布式竞争锁(分布式锁请求等待)
      *
      * @param key
@@ -37,6 +44,13 @@ public interface DistributeLock {
      */
     public void releaseLock(String key);
 
+    /**
+     * 分布式唯一锁(请求不等待)
+     *
+     * @param key
+     * @return
+     */
+    public boolean trySemaphoreLock(String key);
     /**
      * 分布式唯一锁(请求不等待)
      *
