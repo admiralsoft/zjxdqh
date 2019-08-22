@@ -105,7 +105,7 @@ public class AESUtils {
         String s3 = Base64.getEncoder().encodeToString(s1);
         System.out.println("s1:" + s3);
 
-        s3 = "WUQ1vKm87JtyAqbrfNr+bAml/JtOi/mmU9zSwkZRgHuW0Y/ZJNIs9Uze2DyaZFmdNFoIp6QE4t2IgJ/ysjKt5w==";
+        s3 = "frSjl30cmgkYT8O88fXJCWUhSQA8nWychKr7Wv6pNCg9WsDB9HRHZ54ZYC/F3w2IlrCIMwBXgWlwel0kH5FfowYHti3k3esapK2K1jtPAffh78vG0XJV6V4e86Mh05X5D32Do/1z5HxuAkx9JeEB1UIgnSkOWp09Uonuiy6urx5q9HlZmmx8ys45M06JZhRR";
         byte[] s2 = AESUtils.decrypt(Base64.getDecoder().decode(s3), "AveZrSgwSN1eSlxE".getBytes(), "siaxPfKkgAocqQ10".getBytes());
         System.out.println("s2:"+new String(s2, "utf-8"));
     }
