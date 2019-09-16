@@ -80,7 +80,6 @@ public class DateUtils {
         Calendar to = Calendar.getInstance();
         to.setTime(starttime);
         int year = from.get(Calendar.YEAR) - to.get(Calendar.YEAR);
-        System.err.println("年：" + year);
 
         // 天数
         long days = diff / (1000 * 60 * 60 * 24);
