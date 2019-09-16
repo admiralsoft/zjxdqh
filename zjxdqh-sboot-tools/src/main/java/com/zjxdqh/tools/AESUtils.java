@@ -97,15 +97,17 @@ public class AESUtils {
         return params;
     }
     public static void main(String[] args) throws UnsupportedEncodingException {
-        String s = "{\"operationID\":\"765367611\",\"operatorSecret\":\"4hrC6kkEOhJYQuNl\"}";
+//        String s = "{\"operationID\":\"765367611\",\"operatorSecret\":\"4hrC6kkEOhJYQuNl\"}";
+        String s = "{\"StartChargeSeq\":\"aaa1111111\",\"ConnectorID\":\"87710000000000012\", \"QRCode\":\"4hrC6kkEOhJYQuNl\"}";
+//        String s = "{\"StartChargeSeq\":\"765367611\"}";
 
         System.out.println("s:" + s);
 
         byte[] s1 = AESUtils.encrypt(s.getBytes(), "AveZrSgwSN1eSlxE".getBytes(), "siaxPfKkgAocqQ10".getBytes());
         String s3 = Base64.getEncoder().encodeToString(s1);
         System.out.println("s1:" + s3);
-
-        s3 = "frSjl30cmgkYT8O88fXJCWUhSQA8nWychKr7Wv6pNCg9WsDB9HRHZ54ZYC/F3w2IlrCIMwBXgWlwel0kH5FfowYHti3k3esapK2K1jtPAffh78vG0XJV6V4e86Mh05X5D32Do/1z5HxuAkx9JeEB1UIgnSkOWp09Uonuiy6urx5q9HlZmmx8ys45M06JZhRR";
+//MA6DE1HK0T6zaC4ltN1LtLGsNv7
+        s3 = "B6uc8514zc5xd00M/5adIDRHNnHZN2+r+S8O7+2z3A9gbTUW0c1Dnj2IlMZLqI1Ni5asgZSQ88DTMjDrBd82S7Th73XCnOt+16Mt0gLlXZL7cCWzCHvOcemiUU0hd5JV";
         byte[] s2 = AESUtils.decrypt(Base64.getDecoder().decode(s3), "AveZrSgwSN1eSlxE".getBytes(), "siaxPfKkgAocqQ10".getBytes());
         System.out.println("s2:"+new String(s2, "utf-8"));
     }
