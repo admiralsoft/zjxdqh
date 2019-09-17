@@ -62,6 +62,10 @@ public class DateUtils {
         return df.format(new Date());
     }
 
+
+    public static Date getNowDate() {
+        return new Date();
+    }
     /**
      * 两时间相减  --  获取时间长度
      *
