@@ -14,6 +14,7 @@ public class DateUtils {
 
     public static final String YMDHMS = "yyyyMMddHHmmss";
     public static final String YMD_HMS = "yyyy-MM-dd HH:mm:ss";
+    public static final String YMD_HMS_ = "yyyy/MM/dd HH:mm:ss";
     public static final String Y_M_D = "yyyy-MM-dd";
 
 
@@ -37,6 +38,17 @@ public class DateUtils {
      */
     public static String getDateString(Date date) {
         DateFormat df = new SimpleDateFormat(YMD_HMS);
+        return df.format(date);
+    }
+
+    /**
+     * 获取 时间格式化字符串（默认格式： yyyy/MM/dd HH:mm:ss)
+     *
+     * @param date
+     * @return
+     */
+    public static String getDate_String(Date date) {
+        DateFormat df = new SimpleDateFormat(YMD_HMS_);
         return df.format(date);
     }
 
