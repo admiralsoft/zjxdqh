@@ -40,6 +40,10 @@ public class MqObject {
      * 延时退款队列
      */
     public static final int CODE_ORDER_TIMEOUT = 7;
+    /**
+     * 发送场站费率变更
+     */
+    public static final int CODE_PRICE_CHANGE = 8;
 
 
     private int code;
@@ -60,12 +64,18 @@ public class MqObject {
      */
     private String gunNo;
 
+    /**
+     * 扩展字段
+     */
+    private String ext;
+
     public static void main(String[] args) {
         MqObject mq = new MqObject();
-        mq.setCode(CODE_ORDER_INFO);
-        mq.setOrderNo("A2019031817120387710000000000012");
-        mq.setDeviceNo("6668880000000123");
-        mq.setGunNo("1");
+        mq.setCode(CODE_PRICE_CHANGE);
+//        mq.setOrderNo("A2019031817120387710000000000012");
+//        mq.setDeviceNo("6668880000000123");
+//        mq.setGunNo("1");
+        mq.setExt("79,80");
     }
 
 }
