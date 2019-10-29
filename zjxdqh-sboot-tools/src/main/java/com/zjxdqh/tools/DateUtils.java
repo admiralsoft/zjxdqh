@@ -86,6 +86,19 @@ public class DateUtils {
         return df.format(new Date());
     }
 
+    /**
+     * 获取 时间对象
+     *
+     * @return
+     */
+    public static Date getDate(String date, String pattern) {
+        DateFormat df = new SimpleDateFormat(pattern);
+        try {
+            return df.parse(date);
+        } catch (ParseException e) {
+            return null;
+        }
+    }
 
     public static Date getNowDate() {
         return new Date();
