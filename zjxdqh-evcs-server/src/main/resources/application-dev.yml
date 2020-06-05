@@ -1,0 +1,68 @@
+server:
+    port: 19000
+feign:
+    #   运营平台数据 访问地址
+    happy:
+        url: http://localhost:19001/
+    #   成都监管平台 访问地址
+    supervise:
+        url: https://chargehubws.fleetingpower.com/evcs/v1.0/
+
+
+supervise:
+#    请求数据 是否 鉴权 (默认为true)
+    request:
+        auth: false
+#        返回数据 是否 加密 (默认为true)
+    response:
+        encode: false
+# 数据库supersive_info表,配置重庆监管平台ID
+    supersiveId: 5
+
+    #    运营商标识
+    operatorID: MA6DE1HK0
+    #    运营商标识
+    stageOperatorID: MA005DBW1
+    secret:
+#        秘钥
+        operatorSecret: 8hrC6kkEOhJYQuNy
+#        签名秘钥
+        sigSecret: 8Mqnz4LZMxvofGkm
+#        消息秘钥
+        dataSecret: 8veZrSgwSN1eSlxE
+#        初始化向量
+        dataSecretIV: 8iaxPfKkgAocqQ10
+
+
+# rabbit配置
+spring:
+    rabbitmq:
+        host: 112.74.169.195
+        port: 5672
+        username: zjxdqh
+        password: zjxdqh@888
+#        redis 连接设置
+    redis:
+        database: 6
+        host: 120.77.33.248
+        port: 6379
+        password:
+
+
+# 重庆补贴
+chongqin:
+#备案充电价格 浮点型 （元，小数点后4位）
+    applySubsidyPrice: 1.0000
+#申报时间 1: 按月申报  2：按季度申报
+    time: 2
+
+#定时，每月1号执行一次   0 0 0 1 * ?
+#每3月的1号执行一次
+batchTimeProofread:
+    job:
+        cron: 0 0 1 1 3/3 ?
+
+#定时推送设备状态，每三小时推送一次
+Timing:
+    PushPileStatus:
+        cron: 0 0 0/3 * * ?

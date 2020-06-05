@@ -1,0 +1,43 @@
+spring:
+    profiles:
+        include: happy,rabbit
+    application:
+        name: evcsServer
+    jackson:
+        default-property-inclusion: non_null
+        time-zone: GMT+8
+
+#        订单超时退款队列
+    rabbitmq:
+        delay_timeout_exchange_name: evcs_timeout_exchange_name
+        delay_timeout_queue_name: evcs_timeout_order_queue_name
+#        订单超时时间  默认3分钟（180000毫秒）
+        delay_timeout_millsec: 180000
+
+    # 缓存 设置
+    cache:
+        redis:
+            use-key-prefix: true
+            key-prefix: method
+            cache-null-values: false
+#            默认缓存时间
+            time-to-live: 5m
+
+supervise:
+    token:
+        from_cache_key_pre: "supervise:access_token:from:"
+        to_cache_key_pre: "supervise:access_token:to:"
+        availableTime: 72000
+#    请求第三方平台的线程池 设置
+    pool:
+#        初始线程数量
+        corePoolSize: 10
+#        最大线程数量
+        maxPoolSize: 20
+#        最大任务数
+        queueCapacity: 120
+#        存活时间
+        keepAliveSeconds: 60
+#        等待释放时间
+        awaitTerminationSeconds: 60
+

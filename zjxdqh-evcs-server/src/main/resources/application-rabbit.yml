@@ -1,0 +1,10 @@
+
+spring:
+    rabbitmq:
+        publisher-confirms: true
+        virtual-host: /
+        exchange_name: evcs_exchange
+        queue_name: evcs_receive_queue
+        receive_route_key: evcs_receive_route
+        collect_ops_send_queue: collect_ops_send_queue
+
