@@ -1,7 +1,0 @@
-com\tcp\convert\ChargingVo.class
-com\tcp\convert\ChildMessage.class
-com\tcp\convert\Test.class
-com\tcp\mq\factory\MQFactoryImplTest.class
-com\tcp\convert\TestMessage.class
-com\tcp\business\service\TarServiceImplTest.class
-com\tcp\convert\ConvertMessageTest.class
