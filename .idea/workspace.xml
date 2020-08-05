@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c188ff4b-1719-4150-a6af-fe88af665fc5" name="Default Changelist" comment="b_offline_childinfo 表查询null  参数&#10;OfflineInfoServiceImpl  64 - 67 行增加一个判断">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tcp/tcp/netty/XDecoder.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\apache-maven-3.6.0\repository" />
+        <option name="mavenHome" value="D:/apache-maven-3.6.0" />
+        <option name="userSettingsFile" value="D:\apache-maven-3.6.0\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1dkpW8JZbmUHlko5L3yV2t9GffE" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="E:/ljf-project/zjxdqh-sboot-parent" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TCPApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="collect" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.tcp.TCPApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c188ff4b-1719-4150-a6af-fe88af665fc5" name="Default Changelist" comment="" />
+      <created>1592978973436</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1592978973436</updated>
+      <workItem from="1592978981339" duration="4691000" />
+      <workItem from="1593305657643" duration="661000" />
+      <workItem from="1595555002084" duration="284000" />
+      <workItem from="1595578435467" duration="2615000" />
+      <workItem from="1595900736619" duration="5000" />
+      <workItem from="1596590673696" duration="4331000" />
+    </task>
+    <task id="LOCAL-00001" summary="b_offline_childinfo 表查询null  参数&#10;OfflineInfoServiceImpl  64 - 67 行增加一个判断">
+      <created>1592981284087</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1592981284087</updated>
+    </task>
+    <task id="LOCAL-00002" summary="采集端">
+      <created>1596595198202</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1596595198202</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="b_offline_childinfo 表查询null  参数&#10;OfflineInfoServiceImpl  64 - 67 行增加一个判断" />
+    <MESSAGE value="采集端" />
+    <option name="LAST_COMMIT_MESSAGE" value="采集端" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="508" y="120" key="CommitChangelistDialog2" timestamp="1596595193764">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="508" y="120" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1596595193764" />
+    <state x="740" y="281" key="FileChooserDialogImpl" timestamp="1592980452658">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="281" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1592980452658" />
+    <state width="1860" height="279" key="GridCell.Tab.0.bottom" timestamp="1592986497255">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1592986497255" />
+    <state width="1860" height="279" key="GridCell.Tab.0.center" timestamp="1592986497255">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="279" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1592986497255" />
+    <state width="1860" height="279" key="GridCell.Tab.0.left" timestamp="1592986497255">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="279" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1592986497255" />
+    <state width="1860" height="279" key="GridCell.Tab.0.right" timestamp="1592986497255">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="279" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1592986497255" />
+    <state x="461" y="171" key="SettingsEditor" timestamp="1592980695079">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="171" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1592980695079" />
+    <state x="552" y="260" key="Vcs.Push.Dialog.v2" timestamp="1596595218164">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="260" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1596595218164" />
+    <state x="662" y="259" width="596" height="536" key="find.popup" timestamp="1592986140736">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="662" y="259" width="596" height="536" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1592986140736" />
+    <state x="791" y="387" key="git4idea.rebase.GitRebaseDialog" timestamp="1596594998418">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="791" y="387" key="git4idea.rebase.GitRebaseDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1596594998418" />
+    <state x="761" y="433" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1596594964660">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="761" y="433" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1596594964660" />
+  </component>
+</project>

@@ -1,0 +1,178 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.tcp.config.props.RedisStandaloneProps",
+      "name": "redis.standalone",
+      "type": "com.tcp.config.props.RedisStandaloneProps"
+    },
+    {
+      "sourceType": "com.tcp.config.DatasourceConfig",
+      "name": "spring.datasource",
+      "type": "com.tcp.config.DatasourceConfig"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.tcp.config.props.RedisStandaloneProps",
+      "name": "redis.standalone.ip",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.tcp.config.props.RedisStandaloneProps",
+      "name": "redis.standalone.max-active",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.tcp.config.props.RedisStandaloneProps",
+      "name": "redis.standalone.max-idle",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.tcp.config.props.RedisStandaloneProps",
+      "name": "redis.standalone.max-wait",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.tcp.config.props.RedisStandaloneProps",
+      "name": "redis.standalone.min-idle",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.tcp.config.props.RedisStandaloneProps",
+      "name": "redis.standalone.password",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.tcp.config.props.RedisStandaloneProps",
+      "name": "redis.standalone.pool",
+      "type": "java.util.Map<java.lang.String,java.lang.Object>"
+    },
+    {
+      "sourceType": "com.tcp.config.props.RedisStandaloneProps",
+      "name": "redis.standalone.port",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.tcp.config.props.RedisStandaloneProps",
+      "name": "redis.standalone.test-on-borrow",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.tcp.config.props.RedisStandaloneProps",
+      "name": "redis.standalone.time-out",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.tcp.config.props.RedisStandaloneProps",
+      "name": "redis.standalone.use-pool",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.tcp.config.DatasourceConfig",
+      "name": "spring.datasource.connection-properties",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.tcp.config.DatasourceConfig",
+      "name": "spring.datasource.driver-class-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.tcp.config.DatasourceConfig",
+      "name": "spring.datasource.filters",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.tcp.config.DatasourceConfig",
+      "defaultValue": 0,
+      "name": "spring.datasource.initial-size",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.tcp.config.DatasourceConfig",
+      "defaultValue": 0,
+      "name": "spring.datasource.max-active",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.tcp.config.DatasourceConfig",
+      "defaultValue": 0,
+      "name": "spring.datasource.max-pool-prepared-statement-per-connection-size",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.tcp.config.DatasourceConfig",
+      "defaultValue": 0,
+      "name": "spring.datasource.max-wait",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.tcp.config.DatasourceConfig",
+      "defaultValue": 0,
+      "name": "spring.datasource.min-evictable-idle-time-millis",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.tcp.config.DatasourceConfig",
+      "defaultValue": 0,
+      "name": "spring.datasource.min-idle",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.tcp.config.DatasourceConfig",
+      "name": "spring.datasource.password",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.tcp.config.DatasourceConfig",
+      "defaultValue": false,
+      "name": "spring.datasource.pool-prepared-statements",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.tcp.config.DatasourceConfig",
+      "defaultValue": false,
+      "name": "spring.datasource.test-on-borrow",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.tcp.config.DatasourceConfig",
+      "defaultValue": false,
+      "name": "spring.datasource.test-on-return",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.tcp.config.DatasourceConfig",
+      "defaultValue": false,
+      "name": "spring.datasource.test-while-idle",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.tcp.config.DatasourceConfig",
+      "defaultValue": 0,
+      "name": "spring.datasource.time-between-eviction-runs-millis",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.tcp.config.DatasourceConfig",
+      "name": "spring.datasource.type",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.tcp.config.DatasourceConfig",
+      "name": "spring.datasource.url",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.tcp.config.DatasourceConfig",
+      "name": "spring.datasource.username",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.tcp.config.DatasourceConfig",
+      "name": "spring.datasource.validation-query",
+      "type": "java.lang.String"
+    }
+  ]
+}
