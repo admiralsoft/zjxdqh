@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tcp.mapper.LogFaultCodeMapper">
+	<sql id="column">
+		t.id id, 
+		t.pile_num pileNum, 
+		t.gun_num gunNum, 
+		t.fault_code faultCode, 
+		t.error_table errorTable, 
+		t.error_msg errorMsg, 
+		t.status status, 
+		t.create_time createTime, 
+		t.modify_time modifyTime, 
+		t.field1 field1, 
+		t.field2 field2, 
+		t.field3 field3, 
+		t.field4 field4, 
+		t.field5 field5 
+	</sql>
+
+	<!-- 根据map参数条件来查询 author:code_generator -->
+	<select id="getList" parameterType="java.util.Map" resultType="com.tcp.bean.LogFaultCode">
+		SELECT
+			<include refid="column"/>
+		FROM log_fault_code t
+		<trim prefix="WHERE" prefixOverrides="AND |OR ">
+			<if test="id != null and id != '' ">
+  				AND t.id = #{id} 
+  			</if>
+			<if test="pileNum != null and pileNum != '' ">
+  				AND t.pile_num = #{pileNum} 
+  			</if>
+			<if test="gunNum != null and gunNum != '' ">
+  				AND t.gun_num = #{gunNum} 
+  			</if>
+			<if test="faultCode != null and faultCode != '' ">
+  				AND t.fault_code = #{faultCode} 
+  			</if>
+			<if test="errorTable != null and errorTable != '' ">
+  				AND t.error_table = #{errorTable} 
+  			</if>
+			<if test="errorMsg != null and errorMsg != '' ">
+  				AND t.error_msg = #{errorMsg} 
+  			</if>
+			<if test="status != null and status != '' ">
+  				AND t.status = #{status} 
+  			</if>
+			<if test="createTime != null and createTime != '' ">
+  				AND t.create_time = #{createTime} 
+  			</if>
+			<if test="modifyTime != null and modifyTime != '' ">
+  				AND t.modify_time = #{modifyTime} 
+  			</if>
+			<if test="field1 != null and field1 != '' ">
+  				AND t.field1 = #{field1} 
+  			</if>
+			<if test="field2 != null and field2 != '' ">
+  				AND t.field2 = #{field2} 
+  			</if>
+			<if test="field3 != null and field3 != '' ">
+  				AND t.field3 = #{field3} 
+  			</if>
+			<if test="field4 != null and field4 != '' ">
+  				AND t.field4 = #{field4} 
+  			</if>
+			<if test="field5 != null and field5 != '' ">
+  				AND t.field5 = #{field5} 
+  			</if>
+		</trim>
+	</select>
+
+<!--#############################################################################-->
+<!--############################### 自定义方法实现区 ################################-->
+<!--#############################################################################-->
+
+
+
+
+
+</mapper>

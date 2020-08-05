@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tcp.mapper.TFactoryManagerMapper">
+	<sql id="column">
+		t.fac_id facId, 
+		t.name name, 
+		t.address address, 
+		t.phone phone, 
+		t.linkman linkman, 
+		t.create_by createBy, 
+		t.create_time createTime, 
+		t.update_by updateBy, 
+		t.update_time updateTime 
+	</sql>
+
+	<!-- 根据map参数条件来查询 author:code_generator -->
+	<select id="getList" parameterType="java.util.Map" resultType="com.tcp.bean.TFactoryManager">
+		SELECT
+			<include refid="column"/>
+		FROM t_factory_manager t
+		<trim prefix="WHERE" prefixOverrides="AND |OR ">
+			<if test="facId != null and facId != '' ">
+  				AND t.fac_id = #{facId} 
+  			</if>
+			<if test="name != null and name != '' ">
+  				AND t.name = #{name} 
+  			</if>
+			<if test="address != null and address != '' ">
+  				AND t.address = #{address} 
+  			</if>
+			<if test="phone != null and phone != '' ">
+  				AND t.phone = #{phone} 
+  			</if>
+			<if test="linkman != null and linkman != '' ">
+  				AND t.linkman = #{linkman} 
+  			</if>
+			<if test="createBy != null and createBy != '' ">
+  				AND t.create_by = #{createBy} 
+  			</if>
+			<if test="createTime != null and createTime != '' ">
+  				AND t.create_time = #{createTime} 
+  			</if>
+			<if test="updateBy != null and updateBy != '' ">
+  				AND t.update_by = #{updateBy} 
+  			</if>
+			<if test="updateTime != null and updateTime != '' ">
+  				AND t.update_time = #{updateTime} 
+  			</if>
+		</trim>
+	</select>
+
+<!--#############################################################################-->
+<!--############################### 自定义方法实现区 ################################-->
+<!--#############################################################################-->
+
+
+
+
+
+</mapper>

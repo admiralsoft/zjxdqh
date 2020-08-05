@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tcp.mapper.SysRoleMapper">
+	<sql id="column">
+		t.role_id roleId, 
+		t.role_name roleName, 
+		t.role_desc roleDesc, 
+		t.create_by createBy, 
+		t.create_date createDate, 
+		t.create_ip createIp, 
+		t.update_by updateBy, 
+		t.update_date updateDate, 
+		t.update_ip updateIp, 
+		t.field1 field1, 
+		t.field2 field2, 
+		t.field3 field3, 
+		t.field4 field4 
+	</sql>
+
+	<!-- 根据map参数条件来查询 author:code_generator -->
+	<select id="getList" parameterType="java.util.Map" resultType="com.tcp.bean.SysRole">
+		SELECT
+			<include refid="column"/>
+		FROM sys_role t
+		<trim prefix="WHERE" prefixOverrides="AND |OR ">
+			<if test="roleId != null and roleId != '' ">
+  				AND t.role_id = #{roleId} 
+  			</if>
+			<if test="roleName != null and roleName != '' ">
+  				AND t.role_name = #{roleName} 
+  			</if>
+			<if test="roleDesc != null and roleDesc != '' ">
+  				AND t.role_desc = #{roleDesc} 
+  			</if>
+			<if test="createBy != null and createBy != '' ">
+  				AND t.create_by = #{createBy} 
+  			</if>
+			<if test="createDate != null and createDate != '' ">
+  				AND t.create_date = #{createDate} 
+  			</if>
+			<if test="createIp != null and createIp != '' ">
+  				AND t.create_ip = #{createIp} 
+  			</if>
+			<if test="updateBy != null and updateBy != '' ">
+  				AND t.update_by = #{updateBy} 
+  			</if>
+			<if test="updateDate != null and updateDate != '' ">
+  				AND t.update_date = #{updateDate} 
+  			</if>
+			<if test="updateIp != null and updateIp != '' ">
+  				AND t.update_ip = #{updateIp} 
+  			</if>
+			<if test="field1 != null and field1 != '' ">
+  				AND t.field1 = #{field1} 
+  			</if>
+			<if test="field2 != null and field2 != '' ">
+  				AND t.field2 = #{field2} 
+  			</if>
+			<if test="field3 != null and field3 != '' ">
+  				AND t.field3 = #{field3} 
+  			</if>
+			<if test="field4 != null and field4 != '' ">
+  				AND t.field4 = #{field4} 
+  			</if>
+		</trim>
+	</select>
+
+<!--#############################################################################-->
+<!--############################### 自定义方法实现区 ################################-->
+<!--#############################################################################-->
+
+
+
+
+
+</mapper>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tcp.mapper.SysUserMapper">
+	<sql id="column">
+		t.user_id userId, 
+		t.account account, 
+		t.pwd pwd, 
+		t.user_name userName, 
+		t.status status, 
+		t.last_login_date lastLoginDate, 
+		t.email email, 
+		t.create_by createBy, 
+		t.create_date createDate, 
+		t.create_ip createIp, 
+		t.update_by updateBy, 
+		t.update_date updateDate, 
+		t.update_ip updateIp, 
+		t.ext1 ext1, 
+		t.ext2 ext2, 
+		t.ext3 ext3, 
+		t.ext4 ext4 
+	</sql>
+
+	<!-- 根据map参数条件来查询 author:code_generator -->
+	<select id="getList" parameterType="java.util.Map" resultType="com.tcp.bean.SysUser">
+		SELECT
+			<include refid="column"/>
+		FROM sys_user t
+		<trim prefix="WHERE" prefixOverrides="AND |OR ">
+			<if test="userId != null and userId != '' ">
+  				AND t.user_id = #{userId} 
+  			</if>
+			<if test="account != null and account != '' ">
+  				AND t.account = #{account} 
+  			</if>
+			<if test="pwd != null and pwd != '' ">
+  				AND t.pwd = #{pwd} 
+  			</if>
+			<if test="userName != null and userName != '' ">
+  				AND t.user_name = #{userName} 
+  			</if>
+			<if test="status != null and status != '' ">
+  				AND t.status = #{status} 
+  			</if>
+			<if test="lastLoginDate != null and lastLoginDate != '' ">
+  				AND t.last_login_date = #{lastLoginDate} 
+  			</if>
+			<if test="email != null and email != '' ">
+  				AND t.email = #{email} 
+  			</if>
+			<if test="createBy != null and createBy != '' ">
+  				AND t.create_by = #{createBy} 
+  			</if>
+			<if test="createDate != null and createDate != '' ">
+  				AND t.create_date = #{createDate} 
+  			</if>
+			<if test="createIp != null and createIp != '' ">
+  				AND t.create_ip = #{createIp} 
+  			</if>
+			<if test="updateBy != null and updateBy != '' ">
+  				AND t.update_by = #{updateBy} 
+  			</if>
+			<if test="updateDate != null and updateDate != '' ">
+  				AND t.update_date = #{updateDate} 
+  			</if>
+			<if test="updateIp != null and updateIp != '' ">
+  				AND t.update_ip = #{updateIp} 
+  			</if>
+			<if test="ext1 != null and ext1 != '' ">
+  				AND t.ext1 = #{ext1} 
+  			</if>
+			<if test="ext2 != null and ext2 != '' ">
+  				AND t.ext2 = #{ext2} 
+  			</if>
+			<if test="ext3 != null and ext3 != '' ">
+  				AND t.ext3 = #{ext3} 
+  			</if>
+			<if test="ext4 != null and ext4 != '' ">
+  				AND t.ext4 = #{ext4} 
+  			</if>
+		</trim>
+	</select>
+
+<!--#############################################################################-->
+<!--############################### 自定义方法实现区 ################################-->
+<!--#############################################################################-->
+
+
+
+
+
+</mapper>

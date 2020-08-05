@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tcp.mapper.TPileStatusInfoMapper">
+	<sql id="column">
+		t.id id, 
+		t.pile_num pileNum, 
+		t.online_time onlineTime, 
+		t.leave_time leaveTime,
+		t.last_leave_time lastLeaveTime,
+		t.state state, 
+		t.create_time createTime, 
+		t.update_time updateTime 
+	</sql>
+
+	<!-- 根据map参数条件来查询 author:code_generator -->
+	<select id="getList" parameterType="java.util.Map" resultType="com.tcp.bean.TPileStatusInfo">
+		SELECT
+			<include refid="column"/>
+		FROM t_pile_status_info t
+		<trim prefix="WHERE" prefixOverrides="AND |OR ">
+			<if test="id != null and id != '' ">
+  				AND t.id = #{id} 
+  			</if>
+			<if test="pileNum != null and pileNum != '' ">
+  				AND t.pile_num = #{pileNum} 
+  			</if>
+			<if test="onlineTime != null and onlineTime != '' ">
+  				AND t.online_time = #{onlineTime} 
+  			</if>
+			<if test="leaveTime != null and leaveTime != '' ">
+  				AND t.leave_time = #{leaveTime} 
+  			</if>
+			<if test="state != null and state != '' ">
+  				AND t.state = #{state} 
+  			</if>
+			<if test="createTime != null and createTime != '' ">
+  				AND t.create_time = #{createTime} 
+  			</if>
+			<if test="updateTime != null and updateTime != '' ">
+  				AND t.update_time = #{updateTime} 
+  			</if>
+		</trim>
+	</select>
+
+<!--#############################################################################-->
+<!--############################### 自定义方法实现区 ################################-->
+<!--#############################################################################-->
+
+	<select id="selectLastOnlineTime" parameterType="java.lang.String" resultType="com.tcp.bean.TPileStatusInfo">
+		SELECT
+		<include refid="column"/>
+		FROM t_pile_status_info t
+		where t.pile_num = #{pileNum} order by t.online_time desc limit 1
+	</select>
+
+
+
+</mapper>

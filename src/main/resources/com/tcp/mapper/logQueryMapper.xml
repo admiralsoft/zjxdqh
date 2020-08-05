@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tcp.mapper.LogQueryMapper">
+	<sql id="column">
+		t.id id, 
+		t.account_type accountType, 
+		t.car_id carId, 
+		t.amount amount, 
+		t.charge_num chargeNum, 
+		t.start_time startTime, 
+		t.end_time endTime, 
+		t.start_soc startSoc, 
+		t.end_soc endSoc, 
+		t.start_ammeter_num startAmmeterNum, 
+		t.end_ammeter_num endAmmeterNum, 
+		t.message message, 
+		t.record_type recordType 
+	</sql>
+
+	<!-- 根据map参数条件来查询 author:code_generator -->
+	<select id="getList" parameterType="java.util.Map" resultType="com.tcp.bean.LogQuery">
+		SELECT
+			<include refid="column"/>
+		FROM log_query t
+		<trim prefix="WHERE" prefixOverrides="AND |OR ">
+			<if test="id != null and id != '' ">
+  				AND t.id = #{id} 
+  			</if>
+			<if test="accountType != null and accountType != '' ">
+  				AND t.account_type = #{accountType} 
+  			</if>
+			<if test="carId != null and carId != '' ">
+  				AND t.car_id = #{carId} 
+  			</if>
+			<if test="amount != null and amount != '' ">
+  				AND t.amount = #{amount} 
+  			</if>
+			<if test="chargeNum != null and chargeNum != '' ">
+  				AND t.charge_num = #{chargeNum} 
+  			</if>
+			<if test="startTime != null and startTime != '' ">
+  				AND t.start_time = #{startTime} 
+  			</if>
+			<if test="endTime != null and endTime != '' ">
+  				AND t.end_time = #{endTime} 
+  			</if>
+			<if test="startSoc != null and startSoc != '' ">
+  				AND t.start_soc = #{startSoc} 
+  			</if>
+			<if test="endSoc != null and endSoc != '' ">
+  				AND t.end_soc = #{endSoc} 
+  			</if>
+			<if test="startAmmeterNum != null and startAmmeterNum != '' ">
+  				AND t.start_ammeter_num = #{startAmmeterNum} 
+  			</if>
+			<if test="endAmmeterNum != null and endAmmeterNum != '' ">
+  				AND t.end_ammeter_num = #{endAmmeterNum} 
+  			</if>
+			<if test="message != null and message != '' ">
+  				AND t.message = #{message} 
+  			</if>
+			<if test="recordType != null and recordType != '' ">
+  				AND t.record_type = #{recordType} 
+  			</if>
+		</trim>
+	</select>
+
+<!--#############################################################################-->
+<!--############################### 自定义方法实现区 ################################-->
+<!--#############################################################################-->
+
+
+
+
+
+</mapper>

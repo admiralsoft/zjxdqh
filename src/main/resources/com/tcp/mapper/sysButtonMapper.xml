@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tcp.mapper.SysButtonMapper">
+	<sql id="column">
+		t.bt_id btId, 
+		t.func_id funcId, 
+		t.bt_code btCode, 
+		t.bt_name btName, 
+		t.create_by createBy, 
+		t.create_date createDate, 
+		t.field1 field1, 
+		t.field2 field2, 
+		t.field3 field3 
+	</sql>
+
+	<!-- 根据map参数条件来查询 author:code_generator -->
+	<select id="getList" parameterType="java.util.Map" resultType="com.tcp.bean.SysButton">
+		SELECT
+			<include refid="column"/>
+		FROM sys_button t
+		<trim prefix="WHERE" prefixOverrides="AND |OR ">
+			<if test="btId != null and btId != '' ">
+  				AND t.bt_id = #{btId} 
+  			</if>
+			<if test="funcId != null and funcId != '' ">
+  				AND t.func_id = #{funcId} 
+  			</if>
+			<if test="btCode != null and btCode != '' ">
+  				AND t.bt_code = #{btCode} 
+  			</if>
+			<if test="btName != null and btName != '' ">
+  				AND t.bt_name = #{btName} 
+  			</if>
+			<if test="createBy != null and createBy != '' ">
+  				AND t.create_by = #{createBy} 
+  			</if>
+			<if test="createDate != null and createDate != '' ">
+  				AND t.create_date = #{createDate} 
+  			</if>
+			<if test="field1 != null and field1 != '' ">
+  				AND t.field1 = #{field1} 
+  			</if>
+			<if test="field2 != null and field2 != '' ">
+  				AND t.field2 = #{field2} 
+  			</if>
+			<if test="field3 != null and field3 != '' ">
+  				AND t.field3 = #{field3} 
+  			</if>
+		</trim>
+	</select>
+
+<!--#############################################################################-->
+<!--############################### 自定义方法实现区 ################################-->
+<!--#############################################################################-->
+
+
+
+
+
+</mapper>

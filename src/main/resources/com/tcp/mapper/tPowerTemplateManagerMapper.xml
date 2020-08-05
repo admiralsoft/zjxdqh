@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tcp.mapper.TPowerTemplateManagerMapper">
+	<sql id="column">
+		t.power_id powerId, 
+		t.name name, 
+		t.mark_no markNo, 
+		t.remark remark, 
+		t.create_by createBy, 
+		t.create_time createTime, 
+		t.update_by updateBy, 
+		t.update_time updateTime 
+	</sql>
+
+	<!-- 根据map参数条件来查询 author:code_generator -->
+	<select id="getList" parameterType="java.util.Map" resultType="com.tcp.bean.TPowerTemplateManager">
+		SELECT
+			<include refid="column"/>
+		FROM t_power_template_manager t
+		<trim prefix="WHERE" prefixOverrides="AND |OR ">
+			<if test="powerId != null and powerId != '' ">
+  				AND t.power_id = #{powerId} 
+  			</if>
+			<if test="name != null and name != '' ">
+  				AND t.name = #{name} 
+  			</if>
+			<if test="markNo != null and markNo != '' ">
+  				AND t.mark_no = #{markNo} 
+  			</if>
+			<if test="remark != null and remark != '' ">
+  				AND t.remark = #{remark} 
+  			</if>
+			<if test="createBy != null and createBy != '' ">
+  				AND t.create_by = #{createBy} 
+  			</if>
+			<if test="createTime != null and createTime != '' ">
+  				AND t.create_time = #{createTime} 
+  			</if>
+			<if test="updateBy != null and updateBy != '' ">
+  				AND t.update_by = #{updateBy} 
+  			</if>
+			<if test="updateTime != null and updateTime != '' ">
+  				AND t.update_time = #{updateTime} 
+  			</if>
+		</trim>
+	</select>
+
+<!--#############################################################################-->
+<!--############################### 自定义方法实现区 ################################-->
+<!--#############################################################################-->
+
+
+
+
+
+</mapper>

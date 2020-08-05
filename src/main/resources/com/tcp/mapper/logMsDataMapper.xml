@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tcp.mapper.LogMsDataMapper">
+	<sql id="column">
+		t.id id, 
+		t.pile_num pileNum, 
+		t.gun_num gunNum, 
+		t.dc_type dcType, 
+		t.dc_tcp_type dcTcpType, 
+		t.bms_version bmsVersion, 
+		t.dc_dealer dcDealer, 
+		t.dcz_serial dczSerial, 
+		t.dcz_charge_number dczChargeNumber, 
+		t.dcz_create_time dczCreateTime, 
+		t.dz_demand dzDemand, 
+		t.dl_demand dlDemand, 
+		t.dc_rated_capacity dcRatedCapacity, 
+		t.dc_rated_voltage dcRatedVoltage, 
+		t.rechargeable_voltage_max rechargeableVoltageMax, 
+		t.rechargeable_current_max rechargeableCurrentMax, 
+		t.rechargeable_temperature_max rechargeableTemperatureMax, 
+		t.rechargeable_status rechargeableStatus, 
+		t.dc_voltage_now dcVoltageNow, 
+		t.voltage_out_max voltageOutMax, 
+		t.voltage_out_min voltageOutMin, 
+		t.current_out_max currentOutMax, 
+		t.current_out_min currentOutMin, 
+		t.create_time createTime, 
+		t.modify_time modifyTime, 
+		t.field1 field1, 
+		t.field2 field2, 
+		t.field3 field3, 
+		t.field4 field4, 
+		t.field5 field5 
+	</sql>
+
+	<!-- 根据map参数条件来查询 author:code_generator -->
+	<select id="getList" parameterType="java.util.Map" resultType="com.tcp.bean.LogMsData">
+		SELECT
+			<include refid="column"/>
+		FROM log_ms_data t
+		<trim prefix="WHERE" prefixOverrides="AND |OR ">
+			<if test="id != null and id != '' ">
+  				AND t.id = #{id} 
+  			</if>
+			<if test="pileNum != null and pileNum != '' ">
+  				AND t.pile_num = #{pileNum} 
+  			</if>
+			<if test="gunNum != null and gunNum != '' ">
+  				AND t.gun_num = #{gunNum} 
+  			</if>
+			<if test="dcType != null and dcType != '' ">
+  				AND t.dc_type = #{dcType} 
+  			</if>
+			<if test="dcTcpType != null and dcTcpType != '' ">
+  				AND t.dc_tcp_type = #{dcTcpType} 
+  			</if>
+			<if test="bmsVersion != null and bmsVersion != '' ">
+  				AND t.bms_version = #{bmsVersion} 
+  			</if>
+			<if test="dcDealer != null and dcDealer != '' ">
+  				AND t.dc_dealer = #{dcDealer} 
+  			</if>
+			<if test="dczSerial != null and dczSerial != '' ">
+  				AND t.dcz_serial = #{dczSerial} 
+  			</if>
+			<if test="dczChargeNumber != null and dczChargeNumber != '' ">
+  				AND t.dcz_charge_number = #{dczChargeNumber} 
+  			</if>
+			<if test="dczCreateTime != null and dczCreateTime != '' ">
+  				AND t.dcz_create_time = #{dczCreateTime} 
+  			</if>
+			<if test="dzDemand != null and dzDemand != '' ">
+  				AND t.dz_demand = #{dzDemand} 
+  			</if>
+			<if test="dlDemand != null and dlDemand != '' ">
+  				AND t.dl_demand = #{dlDemand} 
+  			</if>
+			<if test="dcRatedCapacity != null and dcRatedCapacity != '' ">
+  				AND t.dc_rated_capacity = #{dcRatedCapacity} 
+  			</if>
+			<if test="dcRatedVoltage != null and dcRatedVoltage != '' ">
+  				AND t.dc_rated_voltage = #{dcRatedVoltage} 
+  			</if>
+			<if test="rechargeableVoltageMax != null and rechargeableVoltageMax != '' ">
+  				AND t.rechargeable_voltage_max = #{rechargeableVoltageMax} 
+  			</if>
+			<if test="rechargeableCurrentMax != null and rechargeableCurrentMax != '' ">
+  				AND t.rechargeable_current_max = #{rechargeableCurrentMax} 
+  			</if>
+			<if test="rechargeableTemperatureMax != null and rechargeableTemperatureMax != '' ">
+  				AND t.rechargeable_temperature_max = #{rechargeableTemperatureMax} 
+  			</if>
+			<if test="rechargeableStatus != null and rechargeableStatus != '' ">
+  				AND t.rechargeable_status = #{rechargeableStatus} 
+  			</if>
+			<if test="dcVoltageNow != null and dcVoltageNow != '' ">
+  				AND t.dc_voltage_now = #{dcVoltageNow} 
+  			</if>
+			<if test="voltageOutMax != null and voltageOutMax != '' ">
+  				AND t.voltage_out_max = #{voltageOutMax} 
+  			</if>
+			<if test="voltageOutMin != null and voltageOutMin != '' ">
+  				AND t.voltage_out_min = #{voltageOutMin} 
+  			</if>
+			<if test="currentOutMax != null and currentOutMax != '' ">
+  				AND t.current_out_max = #{currentOutMax} 
+  			</if>
+			<if test="currentOutMin != null and currentOutMin != '' ">
+  				AND t.current_out_min = #{currentOutMin} 
+  			</if>
+			<if test="createTime != null and createTime != '' ">
+  				AND t.create_time = #{createTime} 
+  			</if>
+			<if test="modifyTime != null and modifyTime != '' ">
+  				AND t.modify_time = #{modifyTime} 
+  			</if>
+			<if test="field1 != null and field1 != '' ">
+  				AND t.field1 = #{field1} 
+  			</if>
+			<if test="field2 != null and field2 != '' ">
+  				AND t.field2 = #{field2} 
+  			</if>
+			<if test="field3 != null and field3 != '' ">
+  				AND t.field3 = #{field3} 
+  			</if>
+			<if test="field4 != null and field4 != '' ">
+  				AND t.field4 = #{field4} 
+  			</if>
+			<if test="field5 != null and field5 != '' ">
+  				AND t.field5 = #{field5} 
+  			</if>
+		</trim>
+	</select>
+
+<!--#############################################################################-->
+<!--############################### 自定义方法实现区 ################################-->
+<!--#############################################################################-->
+
+
+
+
+
+</mapper>

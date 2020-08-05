@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tcp.mapper.MLocalParametersMapper">
+	<sql id="column">
+		t.id id, 
+		t.phase_system phaseSystem, 
+		t.max_output maxOutput, 
+		t.pile_work_pattern pileWorkPattern, 
+		t.off_net_charge offNetCharge, 
+		t.off_net_charge_num offNetChargeNum, 
+		t.usable_gun_num usableGunNum, 
+		t.gun_use_num gunUseNum, 
+		t.usable_pre_pile usablePrePile, 
+		t.pile_view_loading_account pileViewLoadingAccount, 
+		t.pile_view_loading_password pileViewLoadingPassword, 
+		t.heart_beat_interval_time heartBeatIntervalTime, 
+		t.server_ip serverIp, 
+		t.server_port serverPort, 
+		t.qrcode_pile_num qrcodePileNum, 
+		t.gun_id gunId, 
+		t.ip ip, 
+		t.version_information versionInformation, 
+		t.command command, 
+		t.m_time mTime, 
+		t.pile_num pileNum, 
+		t.create_time createTime, 
+		t.modify_time modifyTime, 
+		t.field1 field1, 
+		t.field2 field2, 
+		t.field3 field3, 
+		t.field4 field4, 
+		t.field5 field5,
+		t.status status
+	</sql>
+
+	<!-- 根据map参数条件来查询 author:code_generator -->
+	<select id="getList" parameterType="java.util.Map" resultType="com.tcp.bean.MLocalParameters">
+		SELECT
+			<include refid="column"/>
+		FROM m_local_parameters t
+		<trim prefix="WHERE" prefixOverrides="AND |OR ">
+			<if test="id != null and id != '' ">
+  				AND t.id = #{id} 
+  			</if>
+			<if test="phaseSystem != null and phaseSystem != '' ">
+  				AND t.phase_system = #{phaseSystem} 
+  			</if>
+			<if test="maxOutput != null and maxOutput != '' ">
+  				AND t.max_output = #{maxOutput} 
+  			</if>
+			<if test="pileWorkPattern != null and pileWorkPattern != '' ">
+  				AND t.pile_work_pattern = #{pileWorkPattern} 
+  			</if>
+			<if test="offNetCharge != null and offNetCharge != '' ">
+  				AND t.off_net_charge = #{offNetCharge} 
+  			</if>
+			<if test="offNetChargeNum != null and offNetChargeNum != '' ">
+  				AND t.off_net_charge_num = #{offNetChargeNum} 
+  			</if>
+			<if test="usableGunNum != null and usableGunNum != '' ">
+  				AND t.usable_gun_num = #{usableGunNum} 
+  			</if>
+			<if test="gunUseNum != null and gunUseNum != '' ">
+  				AND t.gun_use_num = #{gunUseNum} 
+  			</if>
+			<if test="usablePrePile != null and usablePrePile != '' ">
+  				AND t.usable_pre_pile = #{usablePrePile} 
+  			</if>
+			<if test="pileViewLoadingAccount != null and pileViewLoadingAccount != '' ">
+  				AND t.pile_view_loading_account = #{pileViewLoadingAccount} 
+  			</if>
+			<if test="pileViewLoadingPassword != null and pileViewLoadingPassword != '' ">
+  				AND t.pile_view_loading_password = #{pileViewLoadingPassword} 
+  			</if>
+			<if test="heartBeatIntervalTime != null and heartBeatIntervalTime != '' ">
+  				AND t.heart_beat_interval_time = #{heartBeatIntervalTime} 
+  			</if>
+			<if test="serverIp != null and serverIp != '' ">
+  				AND t.server_ip = #{serverIp} 
+  			</if>
+			<if test="serverPort != null and serverPort != '' ">
+  				AND t.server_port = #{serverPort} 
+  			</if>
+			<if test="qrcodePileNum != null and qrcodePileNum != '' ">
+  				AND t.qrcode_pile_num = #{qrcodePileNum} 
+  			</if>
+			<if test="gunId != null and gunId != '' ">
+  				AND t.gun_id = #{gunId} 
+  			</if>
+			<if test="ip != null and ip != '' ">
+  				AND t.ip = #{ip} 
+  			</if>
+			<if test="versionInformation != null and versionInformation != '' ">
+  				AND t.version_information = #{versionInformation} 
+  			</if>
+			<if test="command != null and command != '' ">
+  				AND t.command = #{command} 
+  			</if>
+			<if test="mTime != null and mTime != '' ">
+  				AND t.m_time = #{mTime} 
+  			</if>
+			<if test="pileNum != null and pileNum != '' ">
+  				AND t.pile_num = #{pileNum} 
+  			</if>
+			<if test="createTime != null and createTime != '' ">
+  				AND t.create_time = #{createTime} 
+  			</if>
+			<if test="modifyTime != null and modifyTime != '' ">
+  				AND t.modify_time = #{modifyTime} 
+  			</if>
+			<if test="field1 != null and field1 != '' ">
+  				AND t.field1 = #{field1} 
+  			</if>
+			<if test="field2 != null and field2 != '' ">
+  				AND t.field2 = #{field2} 
+  			</if>
+			<if test="field3 != null and field3 != '' ">
+  				AND t.field3 = #{field3} 
+  			</if>
+			<if test="field4 != null and field4 != '' ">
+  				AND t.field4 = #{field4} 
+  			</if>
+			<if test="field5 != null and field5 != '' ">
+  				AND t.field5 = #{field5} 
+  			</if>
+			<if test="status != null and status != '' ">
+				AND t.status = #{status}
+			</if>
+		</trim>
+	</select>
+
+<!--#############################################################################-->
+<!--############################### 自定义方法实现区 ################################-->
+<!--#############################################################################-->
+
+
+
+
+
+</mapper>

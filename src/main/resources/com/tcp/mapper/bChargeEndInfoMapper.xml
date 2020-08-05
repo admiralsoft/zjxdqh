@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tcp.mapper.BChargeEndInfoMapper">
+	<sql id="column">
+		t.id id, 
+		t.pile_num pileNum, 
+		t.data_num dataNum, 
+		t.serial_num serialNum, 
+		t.how_long howLong, 
+		t.gun_num gunNum, 
+		t.account_type accountType, 
+		t.cardNum cardnum, 
+		t.account account, 
+		t.vin vin, 
+		t.charging_startime chargingStartime, 
+		t.charging_endtime chargingEndtime, 
+		t.power_sum powerSum, 
+		t.power_servce powerServce, 
+		t.power_amount powerAmount, 
+		t.charging_time_num chargingTimeNum, 
+		t.star_soc starSoc, 
+		t.end_soc endSoc, 
+		t.init_kilowatt initKilowatt, 
+		t.end_kilowatt endKilowatt, 
+		t.start_up startUp, 
+		t.order_no orderNo, 
+		t.create_time createTime, 
+		t.modify_time modifyTime, 
+		t.field1 field1, 
+		t.field2 field2, 
+		t.field3 field3, 
+		t.field4 field4, 
+		t.field5 field5 
+	</sql>
+
+	<!-- 根据map参数条件来查询 author:code_generator -->
+	<select id="getList" parameterType="java.util.Map" resultType="com.tcp.bean.BChargeEndInfo">
+		SELECT
+			<include refid="column"/>
+		FROM b_charge_end_info t
+		<trim prefix="WHERE" prefixOverrides="AND |OR ">
+			<if test="id != null and id != '' ">
+  				AND t.id = #{id} 
+  			</if>
+			<if test="pileNum != null and pileNum != '' ">
+  				AND t.pile_num = #{pileNum} 
+  			</if>
+			<if test="dataNum != null and dataNum != '' ">
+  				AND t.data_num = #{dataNum} 
+  			</if>
+			<if test="serialNum != null and serialNum != '' ">
+  				AND t.serial_num = #{serialNum} 
+  			</if>
+			<if test="howLong != null and howLong != '' ">
+  				AND t.how_long = #{howLong} 
+  			</if>
+			<if test="gunNum != null and gunNum != '' ">
+  				AND t.gun_num = #{gunNum} 
+  			</if>
+			<if test="accountType != null and accountType != '' ">
+  				AND t.account_type = #{accountType} 
+  			</if>
+			<if test="cardnum != null and cardnum != '' ">
+  				AND t.cardNum = #{cardnum} 
+  			</if>
+			<if test="account != null and account != '' ">
+  				AND t.account = #{account} 
+  			</if>
+			<if test="vin != null and vin != '' ">
+  				AND t.vin = #{vin} 
+  			</if>
+			<if test="chargingStartime != null and chargingStartime != '' ">
+  				AND t.charging_startime = #{chargingStartime} 
+  			</if>
+			<if test="chargingEndtime != null and chargingEndtime != '' ">
+  				AND t.charging_endtime = #{chargingEndtime} 
+  			</if>
+			<if test="powerSum != null and powerSum != '' ">
+  				AND t.power_sum = #{powerSum} 
+  			</if>
+			<if test="powerServce != null and powerServce != '' ">
+  				AND t.power_servce = #{powerServce} 
+  			</if>
+			<if test="powerAmount != null and powerAmount != '' ">
+  				AND t.power_amount = #{powerAmount} 
+  			</if>
+			<if test="chargingTimeNum != null and chargingTimeNum != '' ">
+  				AND t.charging_time_num = #{chargingTimeNum} 
+  			</if>
+			<if test="starSoc != null and starSoc != '' ">
+  				AND t.star_soc = #{starSoc} 
+  			</if>
+			<if test="endSoc != null and endSoc != '' ">
+  				AND t.end_soc = #{endSoc} 
+  			</if>
+			<if test="initKilowatt != null and initKilowatt != '' ">
+  				AND t.init_kilowatt = #{initKilowatt} 
+  			</if>
+			<if test="endKilowatt != null and endKilowatt != '' ">
+  				AND t.end_kilowatt = #{endKilowatt} 
+  			</if>
+			<if test="startUp != null and startUp != '' ">
+  				AND t.start_up = #{startUp} 
+  			</if>
+			<if test="orderNo != null and orderNo != '' ">
+  				AND t.order_no = #{orderNo} 
+  			</if>
+			<if test="createTime != null and createTime != '' ">
+  				AND t.create_time = #{createTime} 
+  			</if>
+			<if test="modifyTime != null and modifyTime != '' ">
+  				AND t.modify_time = #{modifyTime} 
+  			</if>
+			<if test="field1 != null and field1 != '' ">
+  				AND t.field1 = #{field1} 
+  			</if>
+			<if test="field2 != null and field2 != '' ">
+  				AND t.field2 = #{field2} 
+  			</if>
+			<if test="field3 != null and field3 != '' ">
+  				AND t.field3 = #{field3} 
+  			</if>
+			<if test="field4 != null and field4 != '' ">
+  				AND t.field4 = #{field4} 
+  			</if>
+			<if test="field5 != null and field5 != '' ">
+  				AND t.field5 = #{field5} 
+  			</if>
+		</trim>
+	</select>
+
+<!--#############################################################################-->
+<!--############################### 自定义方法实现区 ################################-->
+<!--#############################################################################-->
+
+
+
+
+
+</mapper>

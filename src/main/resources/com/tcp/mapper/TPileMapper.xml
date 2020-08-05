@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tcp.mapper.TPileMapper">
+	<resultMap id="BaseResultMap" type="com.tcp.bean.TPile">
+		<id column="pile_num" property="pileNum" jdbcType="VARCHAR" />
+		<result column="pile_type" property="pileType" jdbcType="INTEGER" />
+		<result column="pile_power" property="pilePower" jdbcType="INTEGER" />
+		<result column="pile_voltage" property="pileVoltage" jdbcType="INTEGER" />
+		<result column="pile_longitude" property="pileLongitude"
+			jdbcType="DECIMAL" />
+		<result column="pile_latitude" property="pileLatitude"
+			jdbcType="DECIMAL" />
+		<result column="pile_phase_system" property="pilePhaseSystem"
+			jdbcType="INTEGER" />
+		<result column="pile_max_output" property="pileMaxOutput"
+			jdbcType="INTEGER" />
+		<result column="pile_offnet_num" property="pileOffnetNum"
+			jdbcType="INTEGER" />
+		<result column="pile_usable_gun_num" property="pileUsableGunNum"
+			jdbcType="INTEGER" />
+		<result column="pile_is_pre" property="pileIsPre" jdbcType="INTEGER" />
+		<result column="pile_signin_account" property="pileSigninAccount"
+			jdbcType="VARCHAR" />
+		<result column="pile_signin_password" property="pileSigninPassword"
+			jdbcType="VARCHAR" />
+		<result column="pile_heartbeat_time" property="pileHeartbeatTime"
+			jdbcType="INTEGER" />
+		<result column="pile_service_ip" property="pileServiceIp"
+			jdbcType="VARCHAR" />
+		<result column="pile_service_port" property="pileServicePort"
+			jdbcType="INTEGER" />
+		<result column="pile_hardware_version" property="pileHardwareVersion"
+			jdbcType="VARCHAR" />
+		<result column="pile_software_version" property="pileSoftwareVersion"
+			jdbcType="VARCHAR" />
+		<result column="pile_key" property="pileKey" jdbcType="VARCHAR" />
+		<result column="pile_operate_type" property="pileOperateType"
+			jdbcType="INTEGER" />
+		<result column="pile_signin_state" property="pileSigninState"
+			jdbcType="INTEGER" />
+		<result column="station_id" property="stationId" jdbcType="VARCHAR" />
+		<result column="creation_time" property="creationTime"
+			jdbcType="TIMESTAMP" />
+		<result column="pile_is_message" property="isMessage" jdbcType="TIMESTAMP" />
+		<result column="fac_id" property="facId" jdbcType="VARCHAR"/>
+	</resultMap>
+	<sql id="Base_Column_List">
+		PILE_NUM, PILE_TYPE, PILE_POWER, PILE_VOLTAGE,
+		PILE_LONGITUDE,
+		PILE_LATITUDE,
+		PILE_PHASE_SYSTEM,
+		PILE_MAX_OUTPUT,
+		PILE_OFFNET_NUM,
+		PILE_USABLE_GUN_NUM, PILE_IS_PRE,
+		PILE_SIGNIN_ACCOUNT,
+		PILE_SIGNIN_PASSWORD, PILE_HEARTBEAT_TIME,
+		PILE_SERVICE_IP,
+		PILE_SERVICE_PORT,
+		PILE_HARDWARE_VERSION,
+		PILE_SOFTWARE_VERSION,
+		PILE_KEY, PILE_OPERATE_TYPE, PILE_SIGNIN_STATE,
+		STATION_ID,
+		CREATION_TIME,
+		PILE_IS_MESSAGE,
+		FAC_ID
+	</sql>
+	<!-- 过去桩信息 -->
+	<select id="getPileByNum" resultMap="BaseResultMap"
+		parameterType="java.lang.String">
+		SELECT
+		<include refid="Base_Column_List" />
+		FROM t_pile
+		WHERE PILE_NUM = #{pileNum,jdbcType=VARCHAR}
+	</select>
+	<!-- 修改桩信息 -->
+	<update id="updPileByNum" parameterType="com.tcp.bean.TPile">
+		update t_pile
+		<set>
+			<if test="pileType != null">
+				pile_type = #{pileType,jdbcType=INTEGER},
+			</if>
+			<if test="pilePower != null">
+				pile_power = #{pilePower,jdbcType=INTEGER},
+			</if>
+			<if test="pileVoltage != null">
+				pile_voltage = #{pileVoltage,jdbcType=INTEGER},
+			</if>
+			<if test="pileLongitude != null">
+				pile_longitude = #{pileLongitude,jdbcType=DECIMAL},
+			</if>
+			<if test="pileLatitude != null">
+				pile_latitude = #{pileLatitude,jdbcType=DECIMAL},
+			</if>
+			<if test="pilePhaseSystem != null">
+				pile_phase_system = #{pilePhaseSystem,jdbcType=INTEGER},
+			</if>
+			<if test="pileMaxOutput != null">
+				pile_max_output = #{pileMaxOutput,jdbcType=INTEGER},
+			</if>
+			<if test="pileOffnetNum != null">
+				pile_offnet_num = #{pileOffnetNum,jdbcType=INTEGER},
+			</if>
+			<if test="pileUsableGunNum != null">
+				pile_usable_gun_num =
+				#{pileUsableGunNum,jdbcType=INTEGER},
+			</if>
+			<if test="pileIsPre != null">
+				pile_is_pre = #{pileIsPre,jdbcType=INTEGER},
+			</if>
+			<if test="pileSigninAccount != null">
+				pile_signin_account =
+				#{pileSigninAccount,jdbcType=VARCHAR},
+			</if>
+			<if test="pileSigninPassword != null">
+				pile_signin_password =
+				#{pileSigninPassword,jdbcType=VARCHAR},
+			</if>
+			<if test="pileHeartbeatTime != null">
+				pile_heartbeat_time =
+				#{pileHeartbeatTime,jdbcType=INTEGER},
+			</if>
+			<if test="pileServiceIp != null">
+				pile_service_ip = #{pileServiceIp,jdbcType=VARCHAR},
+			</if>
+			<if test="pileServicePort != null">
+				pile_service_port = #{pileServicePort,jdbcType=INTEGER},
+			</if>
+			<if test="pileHardwareVersion != null">
+				pile_hardware_version =
+				#{pileHardwareVersion,jdbcType=VARCHAR},
+			</if>
+			<if test="pileSoftwareVersion != null">
+				pile_software_version =
+				#{pileSoftwareVersion,jdbcType=VARCHAR},
+			</if>
+			<if test="pileKey != null">
+				pile_key = #{pileKey,jdbcType=VARCHAR},
+			</if>
+			<if test="pileOperateType != null">
+				pile_operate_type = #{pileOperateType,jdbcType=INTEGER},
+			</if>
+			<if test="pileSigninState != null">
+				pile_signin_state = #{pileSigninState,jdbcType=INTEGER},
+			</if>
+			<if test="stationId != null">
+				station_id = #{stationId,jdbcType=VARCHAR},
+			</if>
+			<if test="creationTime != null">
+				creation_time = #{creationTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="facId != null and facId != '' ">
+				fac_id = #{facId,jdbcType=VARCHAR},
+			</if>
+			<if test="lastOfflineTime != null">
+				last_offline_time = #{lastOfflineTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="lastOnlineTime != null">
+				last_online_time = #{lastOnlineTime,jdbcType=TIMESTAMP},
+			</if>
+		</set>
+		where pile_num = #{pileNum,jdbcType=VARCHAR}
+	</update>
+
+
+	<select id="getPriceRates" parameterType="String" resultType="com.tcp.tcp.vo.receive.PrescribedRateInfo">
+	select
+		substr(pf.star_time,12) starTime,
+		substr(pf.end_time,12) endTime,
+		pf.price powerRate,
+		pf.service_price serviceRate
+	from t_power_template_info pf
+	 left join t_power_template_manager pm on pf.mark_no = pm.mark_no
+	 left join t_pile_station ps on ps.power_id = pm.mark_no
+	 left join t_pile p on ps.station_id = p.station_id
+
+	 where p.pile_num = #{pileNum,jdbcType=VARCHAR} order by star_time
+	</select>
+
+	<select id="getOffLineMinByNum" resultType="java.lang.Integer">
+
+    select IFNULL(round((UNIX_TIMESTAMP(NOW())-UNIX_TIMESTAMP(last_offline_time))/60),0) time
+    from t_pile where pile_num=#{pileNum,jdbcType=VARCHAR}
+    and pile_signin_state=2 and build_status=1
+
+	</select>
+</mapper>

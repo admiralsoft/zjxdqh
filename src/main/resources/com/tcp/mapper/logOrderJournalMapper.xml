@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tcp.mapper.LogOrderJournalMapper">
+	<sql id="column">
+		t.id id, 
+		t.order_no orderNo, 
+		t.order_code orderCode, 
+		t.oder_code_type oderCodeType, 
+		t.create_time createTime, 
+		t.modify_time modifyTime 
+	</sql>
+
+	<!-- 根据map参数条件来查询 author:code_generator -->
+	<select id="getList" parameterType="java.util.Map" resultType="com.tcp.bean.LogOrderJournal">
+		SELECT
+			<include refid="column"/>
+		FROM log_order_journal t
+		<trim prefix="WHERE" prefixOverrides="AND |OR ">
+			<if test="id != null and id != '' ">
+  				AND t.id = #{id} 
+  			</if>
+			<if test="orderNo != null and orderNo != '' ">
+  				AND t.order_no = #{orderNo} 
+  			</if>
+			<if test="orderCode != null and orderCode != '' ">
+  				AND t.order_code = #{orderCode} 
+  			</if>
+			<if test="oderCodeType != null and oderCodeType != '' ">
+  				AND t.oder_code_type = #{oderCodeType} 
+  			</if>
+			<if test="createTime != null and createTime != '' ">
+  				AND t.create_time = #{createTime} 
+  			</if>
+			<if test="modifyTime != null and modifyTime != '' ">
+  				AND t.modify_time = #{modifyTime} 
+  			</if>
+		</trim>
+	</select>
+
+<!--#############################################################################-->
+<!--############################### 自定义方法实现区 ################################-->
+<!--#############################################################################-->
+
+
+
+
+
+</mapper>

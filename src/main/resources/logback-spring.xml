@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <!-- 日志文件属性 -->
+  <!--<property name="logBase" value="/Users/mac/Documents/log" />-->
+  <property name="logBase" value="/opt/logs" />
+  <springProperty scope="context" name="appName" source="spring.application.name"/>
+
+  <!--<property name="logBase" value="${catalina.base}/logs/" />-->
+  <property name="debugLogFileName" value="collect_debug" />
+  <property name="infoLogFileName" value="collect_info" />
+  <property name="errorLogFileName" value="collect_error" />
+  <!-- 彩色日志 -->
+  <!-- 彩色日志依赖的渲染类 -->
+  <conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter" />
+  <conversionRule conversionWord="wex" converterClass="org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter" />
+  <conversionRule conversionWord="wEx" converterClass="org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter" />
+  <!-- 彩色日志格式 -->
+  <property name="CONSOLE_LOG_PATTERN" value="${CONSOLE_LOG_PATTERN:-%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}" />
+  <property name="FILE_LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} ${LOG_LEVEL_PATTERN:-%5p} ${PID:- } --- [%t] %-40.40logger{39} : %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"/>
+  <!-- Console 输出设置 -->
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+      <charset>utf8</charset>
+    </encoder>
+  </appender>
+
+  <!-- 日志文件 debug输出设置 -->
+  <appender name="DEFILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>${logBase}/${appName:-}/${debugLogFileName}.log</file>
+    <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+      <!-- rollover daily -->
+      <fileNamePattern>${logBase}/${appName:-}/${debugLogFileName}-%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
+      <!-- each file should be at most 100MB, keep 60 days worth of history, but at most 20GB -->
+      <maxFileSize>30MB</maxFileSize>
+      <maxHistory>60</maxHistory>
+      <totalSizeCap>20GB</totalSizeCap>
+    </rollingPolicy>
+    <encoder>
+      <pattern>${FILE_LOG_PATTERN}</pattern>
+      <charset>utf8</charset>
+    </encoder>
+    <filter class="ch.qos.logback.classic.filter.LevelFilter"><!-- 只打印debug日志 -->
+      <level>DEBUG</level>
+      <onMatch>ACCEPT</onMatch>
+      <onMismatch>DENY</onMismatch>
+    </filter>
+  </appender>
+
+  <!-- 日志文件 info输出设置 -->
+  <appender name="INFILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>${logBase}/${appName:-}/${infoLogFileName}.log</file>
+    <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+      <!-- rollover daily -->
+      <fileNamePattern>${logBase}/${appName:-}/${infoLogFileName}-%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
+      <!-- each file should be at most 100MB, keep 60 days worth of history, but at most 20GB -->
+      <maxFileSize>30MB</maxFileSize>
+      <maxHistory>60</maxHistory>
+      <totalSizeCap>20GB</totalSizeCap>
+    </rollingPolicy>
+    <encoder>
+      <pattern>${FILE_LOG_PATTERN}</pattern>
+      <charset>utf8</charset>
+    </encoder>
+    <filter class="ch.qos.logback.classic.filter.LevelFilter"><!-- 只打印info日志 -->
+      <level>INFO</level>
+      <onMatch>ACCEPT</onMatch>
+      <onMismatch>DENY</onMismatch>
+    </filter>
+  </appender>
+
+
+  <!-- 日志文件 info输出设置 -->
+  <appender name="ERRFILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>${logBase}/${appName:-}/${errorLogFileName}.log</file>
+    <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+      <!-- rollover daily -->
+      <fileNamePattern>${logBase}/${appName:-}/${errorLogFileName}-%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
+      <!-- each file should be at most 100MB, keep 60 days worth of history, but at most 20GB -->
+      <maxFileSize>30MB</maxFileSize>
+      <maxHistory>60</maxHistory>
+      <totalSizeCap>20GB</totalSizeCap>
+    </rollingPolicy>
+    <encoder>
+      <pattern>${FILE_LOG_PATTERN}</pattern>
+      <charset>utf8</charset>
+    </encoder>
+    <filter class="ch.qos.logback.classic.filter.LevelFilter"><!-- 只打印错误日志 -->
+      <level>ERROR</level>
+      <onMatch>ACCEPT</onMatch>
+      <onMismatch>DENY</onMismatch>
+    </filter>
+  </appender>
+
+  <!-- mqLogger文件  -->
+  <appender name="mqLogger" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>${logBase}/${appName:-}/mq/mqLogger.log</file>
+    <encoder>
+      <pattern>${FILE_LOG_PATTERN}</pattern>
+      <charset>utf-8</charset>
+    </encoder>
+    <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+      <!-- rollover daily -->
+      <fileNamePattern>${logBase}/${appName:-}/mq/mqLogger.%d{yyyyMMdd}.%i.log</fileNamePattern>
+      <!-- each file should be at most 50MB, keep 20 days worth of history -->
+      <maxFileSize>400MB</maxFileSize>
+      <maxHistory>30</maxHistory>
+    </rollingPolicy>
+  </appender>
+
+  <!-- offline文件  -->
+  <appender name="offline" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>${logBase}/collect/offline.log</file>
+    <encoder>
+      <pattern>${FILE_LOG_PATTERN}</pattern>
+      <charset>utf-8</charset>
+    </encoder>
+    <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+      <!-- rollover daily -->
+      <fileNamePattern>${logBase}/collect/offline.%d{yyyyMMdd}.%i.log</fileNamePattern>
+      <!-- each file should be at most 50MB, keep 20 days worth of history -->
+      <maxFileSize>400MB</maxFileSize>
+      <maxHistory>30</maxHistory>
+    </rollingPolicy>
+  </appender>
+
+
+  <!-- offlinelong文件  -->
+  <appender name="offlinelong" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>${logBase}/collect/offlinelong.log</file>
+    <encoder>
+      <pattern>${FILE_LOG_PATTERN}</pattern>
+      <charset>utf-8</charset>
+    </encoder>
+    <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+      <!-- rollover daily -->
+      <fileNamePattern>${logBase}/collect/offlinelong.%d{yyyyMMdd}.%i.log</fileNamePattern>
+      <!-- each file should be at most 50MB, keep 20 days worth of history -->
+      <maxFileSize>400MB</maxFileSize>
+      <maxHistory>30</maxHistory>
+    </rollingPolicy>
+  </appender>
+
+
+
+
+  <!-- commandLogger文件  -->
+  <appender name="commandLogger" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>${logBase}/${appName:-}/command/commandLogger.log</file>
+    <encoder>
+      <pattern>${FILE_LOG_PATTERN}</pattern>
+      <charset>utf-8</charset>
+    </encoder>
+    <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+      <!-- rollover daily -->
+      <fileNamePattern>${logBase}/${appName:-}/mq/commandLogger.%d{yyyyMMdd}.%i.log</fileNamePattern>
+      <!-- each file should be at most 50MB, keep 20 days worth of history -->
+      <maxFileSize>400MB</maxFileSize>
+      <maxHistory>30</maxHistory>
+    </rollingPolicy>
+  </appender>
+
+  <!-- regCount文件  -->
+  <appender name="regCountLogger" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>${logBase}/${appName:-}/reg/regCount.log</file>
+    <encoder>
+      <pattern>${FILE_LOG_PATTERN}</pattern>
+      <charset>utf-8</charset>
+    </encoder>
+    <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+      <!-- rollover daily -->
+      <fileNamePattern>${logBase}/${appName:-}/reg/regCount.%d{yyyyMMdd}.%i.log</fileNamePattern>
+      <!-- each file should be at most 50MB, keep 20 days worth of history -->
+      <maxFileSize>400MB</maxFileSize>
+      <maxHistory>30</maxHistory>
+    </rollingPolicy>
+  </appender>
+
+
+
+  <!-- 不带彩色的日志在控制台输出时候的设置 -->
+   <!--<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">-->
+      <!--<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">-->
+           <!--&lt;!&ndash;格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符&ndash;&gt;-->
+          <!--<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>-->
+      <!--</encoder>-->
+  <!--</appender>-->
+
+  <!--日志打印的包的范围，及分类日志文件存储 -->
+  <logger name="com.tcp" additivity="false">
+    <level value="DEBUG" />
+    <appender-ref ref="STDOUT"/>
+    <appender-ref ref="INFILE"/>
+    <appender-ref ref="DEFILE"/>
+    <appender-ref ref="ERRFILE" />
+  </logger>
+
+  <logger name="mqLogger" level="INFO" additivity="true">
+    <appender-ref ref="mqLogger"/>
+  </logger>
+  <logger name="commandLogger" level="INFO" additivity="true">
+    <appender-ref ref="commandLogger"/>
+  </logger>
+
+  <logger name="com.tcp.off.line.remind" level="DEBUG" additivity="true">
+    <appender-ref ref="offline"/>
+  </logger>
+
+
+  <logger name="com.tcp.off.line.remind.long" level="DEBUG" additivity="true">
+    <appender-ref ref="offlinelong"/>
+  </logger>
+
+  <logger name="com.tcp.reg.count" level="ERROR" additivity="true">
+    <appender-ref ref="regCountLogger"/>
+  </logger>
+
+
+  <!--控制台打印资源加载信息-->
+  <root level="info">
+    <appender-ref ref="STDOUT" />
+  </root>
+
+
+</configuration>
